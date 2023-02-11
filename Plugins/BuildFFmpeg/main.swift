@@ -196,7 +196,7 @@ private class BaseBuild {
          "LDFLAGS": ldFlags(platform: platform, arch: arch),
          "PKG_CONFIG_PATH": pkgConfigPath(platform: platform, arch: arch),
          "CMAKE_OSX_ARCHITECTURES": arch.rawValue,
-         "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"]
+         "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin"]
     }
 
     func ccFlags(platform _: PlatformType, arch _: ArchType) -> String {
