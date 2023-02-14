@@ -589,7 +589,7 @@ private class BuildFFMPEG: BaseBuild {
         // ./configure --list-muxers
         "--disable-muxers",
         "--enable-muxer=dash", "--enable-muxer=hevc", "--enable-muxer=mp4", "--enable-muxer=m4v", "--enable-muxer=mov",
-        "--enable-muxer=mpegts", "--enable-muxer=webm*",
+        "--enable-muxer=mpegts", "--enable-muxer=webm*", "--enable-muxer=matroska", 
         // ./configure --list-demuxers
         // 用所有的demuxers的话，那avformat就会达到8MB了，指定的话，那就只要4MB。
         "--disable-demuxers",
