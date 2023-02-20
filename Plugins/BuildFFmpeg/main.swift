@@ -564,11 +564,11 @@ private class BuildFFMPEG: BaseBuild {
         "--enable-videotoolbox", "--enable-audiotoolbox",
         // Individual component options:
         // ,"--disable-everything"
-        // 用所有的encoders的话，那avcodec就会达到40MB了，指定的话，那就只要20MB。
+        // If all encoders are used, the avcodec will reach 40MB, and if specified, it only needs 20MB.
         "--disable-encoders",
         // ./configure --list-decoders
         "--disable-decoders",
-        // 视频
+        // video
         "--enable-decoder=av1", "--enable-decoder=dca", "--enable-decoder=flv", "--enable-decoder=h263",
         "--enable-decoder=h263i", "--enable-decoder=h263p", "--enable-decoder=h264", "--enable-decoder=hevc",
         "--enable-decoder=mjpeg", "--enable-decoder=mjpegb", "--enable-decoder=mpeg1video", "--enable-decoder=mpeg2video",
@@ -576,13 +576,13 @@ private class BuildFFMPEG: BaseBuild {
         "--enable-decoder=tscc", "--enable-decoder=wmv1", "--enable-decoder=wmv2", "--enable-decoder=wmv3",
         "--enable-decoder=vc1", "--enable-decoder=vp6", "--enable-decoder=vp6a", "--enable-decoder=vp6f",
         "--enable-decoder=vp7", "--enable-decoder=vp8", "--enable-decoder=vp9",
-        // 音频
+        // audio
         "--enable-decoder=aac*", "--enable-decoder=ac3*", "--enable-decoder=alac*",
         "--enable-decoder=amr*", "--enable-decoder=ape", "--enable-decoder=cook",
         "--enable-decoder=dca", "--enable-decoder=dolby_e", "--enable-decoder=eac3*", "--enable-decoder=flac",
         "--enable-decoder=mp1*", "--enable-decoder=mp2*", "--enable-decoder=mp3*", "--enable-decoder=opus",
         "--enable-decoder=pcm*", "--enable-decoder=truehd", "--enable-decoder=vorbis", "--enable-decoder=wma*",
-        // 字幕
+        // subtitle
         "--enable-decoder=ass", "--enable-decoder=ccaption", "--enable-decoder=dvbsub", "--enable-decoder=dvdsub", "--enable-decoder=movtext",
         "--enable-decoder=pgssub", "--enable-decoder=srt", "--enable-decoder=ssa", "--enable-decoder=subrip",
         "--enable-decoder=webvtt",
@@ -591,7 +591,7 @@ private class BuildFFMPEG: BaseBuild {
         "--enable-muxer=dash", "--enable-muxer=hevc", "--enable-muxer=mp4", "--enable-muxer=m4v", "--enable-muxer=mov",
         "--enable-muxer=mpegts", "--enable-muxer=webm*", "--enable-muxer=matroska", "--enable-muxer=flv",
         // ./configure --list-demuxers
-        // 用所有的demuxers的话，那avformat就会达到8MB了，指定的话，那就只要4MB。
+        // With all demuxers, avformat will reach 8MB, and if specified, it only needs 4MB.
         "--disable-demuxers",
         "--enable-demuxer=aac", "--enable-demuxer=ac3", "--enable-demuxer=aiff", "--enable-demuxer=amr",
         "--enable-demuxer=ape", "--enable-demuxer=asf", "--enable-demuxer=ass", "--enable-demuxer=avi", "--enable-demuxer=caf",
