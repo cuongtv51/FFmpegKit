@@ -565,7 +565,23 @@ private class BuildFFMPEG: BaseBuild {
         // Individual component options:
         // ,"--disable-everything"
         // If all encoders are used, the avcodec will reach 40MB, and if specified, it only needs 20MB.
+        // ./configure --list-encoders
         "--disable-encoders",
+        // video
+        "--enable-encoder=dca", "--enable-encoder=flv", "--enable-encoder=h263*", "--enable-encoder=h264",
+        "--enable-encoder=hevc*", "--enable-encoder=mjpeg*", "--enable-encoder=mpeg1video", "--enable-encoder=mpeg2video",
+        "--enable-encoder=mpeg4*", "--enable-encoder=wmv1", "--enable-encoder=wmv2", "--enable-encoder=vp6*",
+        "--enable-encoder=libvpx_vp8", "--enable-encoder=libvpx_vp9",
+        // audio
+        "--enable-encoder=aac*", "--enable-encoder=ac3*", "--enable-encoder=alac*", "--enable-encoder=dca",
+        "--enable-encoder=eac3", "--enable-encoder=flac", "--enable-encoder=mp2", "--enable-encoder=libmp3lame",
+        "--enable-encoder=mp3_mf", "--enable-encoder=libopus", "--enable-encoder=pcm*", "--enable-encoder=truehd",
+        "--enable-encoder=vorbis", "--enable-encoder=wma*",
+        // subtitle
+        "--enable-encoder=ass", "--enable-encoder=dvbsub", "--enable-encoder=dvdsub", "--enable-encoder=",
+        "--enable-encoder=movtext", "--enable-encoder=srt", "--enable-encoder=ssa", "--enable-encoder=subrip",
+        "--enable-encoder=webvtt",
+        
         // ./configure --list-decoders
         "--disable-decoders",
         // video
@@ -588,19 +604,34 @@ private class BuildFFMPEG: BaseBuild {
         "--enable-decoder=webvtt",
         // ./configure --list-muxers
         "--disable-muxers",
-        "--enable-muxer=dash", "--enable-muxer=hevc", "--enable-muxer=mp4", "--enable-muxer=m4v", "--enable-muxer=mov",
-        "--enable-muxer=mpegts", "--enable-muxer=webm*", "--enable-muxer=matroska", "--enable-muxer=flv",
+        "--enable-muxer=mp4",
+        "--enable-muxer=webm",
+        "--enable-muxer=ac3", "--enable-muxer=aiff", "--enable-muxer=amr",
+        "--enable-muxer=asf", "--enable-muxer=ass", "--enable-muxer=avi", "--enable-muxer=caf",
+        "--enable-muxer=dash", "--enable-muxer=data", "--enable-muxer=eac3",
+        "--enable-muxer=flac", "--enable-muxer=flv", "--enable-muxer=h264", "--enable-muxer=hevc",
+        "--enable-muxer=hls", "--enable-muxer=m4v",
+        "--enable-muxer=matroska", "--enable-muxer=mov", "--enable-muxer=mp3", "--enable-muxer=mpeg*",
+        "--enable-muxer=ogg", "--enable-muxer=rm", "--enable-muxer=rstp", "--enable-muxer=rst",
+        "--enable-muxer=vc1", "--enable-muxer=wav", "--enable-muxer=webm_dash_manifest",
+        "--enable-muxer=mpegts",
         // ./configure --list-demuxers
         // With all demuxers, avformat will reach 8MB, and if specified, it only needs 4MB.
         "--disable-demuxers",
-        "--enable-demuxer=aac", "--enable-demuxer=ac3", "--enable-demuxer=aiff", "--enable-demuxer=amr",
-        "--enable-demuxer=ape", "--enable-demuxer=asf", "--enable-demuxer=ass", "--enable-demuxer=avi", "--enable-demuxer=caf",
-        "--enable-demuxer=concat", "--enable-demuxer=dash", "--enable-demuxer=data", "--enable-demuxer=eac3",
+        "--enable-demuxer=aac",
+        "--enable-demuxer=ape",
+        "--enable-demuxer=concat",
+        "--enable-demuxer=live_flv",
+        "--enable-demuxer=loas",
+        "--enable-demuxer=ac3", "--enable-demuxer=aiff", "--enable-demuxer=amr",
+        "--enable-demuxer=asf", "--enable-demuxer=ass", "--enable-demuxer=avi", "--enable-demuxer=caf",
+        "--enable-demuxer=dash", "--enable-demuxer=data", "--enable-demuxer=eac3",
         "--enable-demuxer=flac", "--enable-demuxer=flv", "--enable-demuxer=h264", "--enable-demuxer=hevc",
-        "--enable-demuxer=hls", "--enable-demuxer=live_flv", "--enable-demuxer=loas", "--enable-demuxer=m4v",
+        "--enable-demuxer=hls", "--enable-demuxer=m4v",
         "--enable-demuxer=matroska", "--enable-demuxer=mov", "--enable-demuxer=mp3", "--enable-demuxer=mpeg*",
         "--enable-demuxer=ogg", "--enable-demuxer=rm", "--enable-demuxer=rtsp", "--enable-demuxer=srt",
         "--enable-demuxer=vc1", "--enable-demuxer=wav", "--enable-demuxer=webm_dash_manifest",
+        "--enable-demuxer=mpegts",
         // ./configure --list-protocols
         "--enable-protocols",
         "--disable-protocol=bluray", "--disable-protocol=ffrtmpcrypt", "--disable-protocol=gopher", "--disable-protocol=icecast",
