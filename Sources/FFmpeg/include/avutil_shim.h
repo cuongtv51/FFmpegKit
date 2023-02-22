@@ -84,4 +84,8 @@ static const int swift_AVERROR_HTTP_NOT_FOUND     = AVERROR_HTTP_NOT_FOUND;
 static const int swift_AVERROR_HTTP_OTHER_4XX     = AVERROR_HTTP_OTHER_4XX;
 static const int swift_AVERROR_HTTP_SERVER_ERROR  = AVERROR_HTTP_SERVER_ERROR;
 
+static inline void swift_log(void *avcl, int level, const char *msg) {
+  av_log(avcl, level, msg);
+}
+
 #endif /* AVUTIL_SHIM_H */
